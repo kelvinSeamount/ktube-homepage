@@ -3,6 +3,7 @@ import CategoryPills from "./component/CategoryPills";
 import { categories, videos } from "./data/home";
 import PageHeader from "./layout/PageHeader";
 import VideoGridItem from "./component/VideoGridItem";
+import SideBar from "./layout/SideBar";
 
 function App() {
   const [selectedCategory, setSelectedCategory] = React.useState(categories[0]);
@@ -10,7 +11,7 @@ function App() {
     <div className="max-h-screen flex flex-col">
       <PageHeader />
       <div className="grid grid-cols-[auto,1fr] flex-grow-1 overflow-auto">
-        <div className="">SideBar</div>
+        <SideBar />
         <div className="overflow-x-hidden pb-4 px-8">
           <div className="sticky top-0 bg-white z-10 pb-4">
             <CategoryPills
