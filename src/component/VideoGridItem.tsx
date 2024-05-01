@@ -30,7 +30,7 @@ const VideoGridItem = ({
 }: VideoGridItemProps) => {
   //STATES FOR PLAY VIDEOS
   const [videoPlayed, setVideoPlayed] = React.useState(false);
-  const videoref = React.createRef<HTMLDivElement>();
+  const videoref = React.createRef<HTMLVideoElement>();
 
   useEffect(() => {
     if (videoref.current == null) return;
