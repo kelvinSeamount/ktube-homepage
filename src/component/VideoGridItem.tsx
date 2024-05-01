@@ -1,4 +1,6 @@
 import { DurationFormats } from "../utils/DurationFormats";
+import { TimeFormatAgo } from "../utils/TimeFormatAgo";
+import { VIEW_FORMATTER } from "../utils/VIEW_FORMATTER";
 
 type VideoGridItemProps = {
   id: string;
@@ -36,6 +38,22 @@ const VideoGridItem = ({
           {DurationFormats(duration)}
         </div>
       </a>
+      <div className="flex gap-2 ">
+        <a href={`/@${channel.id}`} className="flex-shrink-0">
+          <img className="w-12 h-12 rounded-full" src={channel.profileUrl} />
+        </a>
+        <div className="flex flex-col">
+          <a href={`/watch?v=${id}`} className="font-bold">
+            {title}
+          </a>
+          <a href={`/@${channel.id}`} className="text-secondary text-sm">
+            {channel.name}
+          </a>
+          <div className="text-secondary-text text-sm">
+            {VIEW_FORMATTER.format(views)} Views . {TimeFormatAgo(postedAt)}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
