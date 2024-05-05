@@ -3,13 +3,13 @@ import { twMerge } from "tailwind-merge";
 import { buttonStyles } from "./Button";
 
 type LargeBarItemProps = {
-  Icon: ElementType;
+  IconOrImgUrl: ElementType | string;
   title: string;
   url: string;
   isActive: boolean;
 };
 const LargeBarItem = ({
-  Icon,
+  IconOrImgUrl,
   isActive = false,
   title,
   url,
@@ -24,7 +24,12 @@ const LargeBarItem = ({
         } w-full flex items-center rounded-lg gap-4 p-3`
       )}
     >
-      <Icon className="w-6 h-6" />
+      {typeof IconOrImgUrl === "string" ? (
+        <img src={IconOrImgUrl} className="w-6 h-6 rounded-full" />
+      ) : (
+        <IconOrImgUrl className="w-6 h-6" />
+      )}
+
       <div className="whitespace-nowrap text-ellipsis overflow-hidden">
         {title}
       </div>
