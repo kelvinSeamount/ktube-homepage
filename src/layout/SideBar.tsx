@@ -22,12 +22,12 @@ import {
 import SmallSideBarItem from "../component/SmallSideBarItem";
 import LargeBarSection from "../component/LargeBarSection";
 import LargeBarItem from "../component/LargeBarItem";
-import { playlists, subscriptions } from "../data/sidebat";
+import { playlists, subscriptions } from "../data/sidebar";
 
 const SideBar = () => {
   return (
     <>
-      <aside className="flex flex-col lg:hidden sticky top-0 ml-1 scrollbar-hidden overflow-y-auto">
+      <aside className="flex flex-col lg:hidden sticky top-0 ml-1 scrollbar-hidden overflow-y-auto pb-4">
         <SmallSideBarItem Icon={Home} title="Home" url="/" />
         <SmallSideBarItem Icon={Repeat} title="Shorts" url="/shorts" />
         <SmallSideBarItem
@@ -38,7 +38,7 @@ const SideBar = () => {
         <SmallSideBarItem Icon={Library} title="Libary" url="/libary" />
       </aside>
 
-      <aside className="lg:sticky absolute top-0 pb-4 flex flex-col px-2 w-56 scrollbar-hidden gap-2">
+      <aside className="lg:sticky absolute top-0 pb-4 flex-col px-2 w-56 scrollbar-hidden gap-2 lg:flex hidden overflow-y-auto">
         <LargeBarSection visibleItemCount={0}>
           <LargeBarItem isActive IconOrImgUrl={Home} title="Home" url="/" />
           <LargeBarItem
